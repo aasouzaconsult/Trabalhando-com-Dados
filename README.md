@@ -16,31 +16,38 @@ Dados.pdf
 
 Materiais
 ------------
+- Apostila SQL Server - Editora Impacta.pdf
+- Apostila DMBOK.pdf
+- Apostila PowerBI - Editora Impacta.pdf
 
 --------------------------------------------------------------------------------------------------
 1° Dia
 -----------
-Dados
-Banco de Dados
+Dados, Banco de Dados, Qualidade de Dados
 
 Dicas
 -----
 
+Bases em Arquivos
+-------------
+- BaseDemonstracao.xlsx
+- BaseDemonstracao_Produto.xlsx
+
 Scripts (.sql)
 -------------
-- 
-- 
-
+- AmbienteSQLServer.sql
 
 --------------------------------------------------------------------------------------------------
 2° Dia
 -----------
+Business Intelligence
 
 Dicas
 -----
-- 
+- PowerBI (https://pessoalex.wordpress.com/bi-3/microsoft/power-bi/)
+- Tableau (https://pessoalex.wordpress.com/bi-3/tableau/)
 
-Scripts (.sql)
+Arquivos (.sql)
 -------------
-- 
-- 
+- ExemploPowerBI.pbix
+- ExemploPowerBI_Dispersao_ENEM2014.pbix
