@@ -3,8 +3,6 @@
 - Blog: https://pessoalex.wordpress.com/
 - E-mail: aasouzaconsult@gmail.com
 
-Link para arquivos: https://drive.google.com/drive/folders/1kMuictsfTVKPQGt3c3QXo5uvbfQVGIF8?usp=sharing
-
 Softwares
 ---------
 - Microsoft SQL Server (https://www.microsoft.com/pt-br/sql-server/sql-server-downloads)
@@ -13,6 +11,8 @@ Softwares
 Apresentação
 ------------
 Dados.pdf
+
+Link para arquivos: https://drive.google.com/drive/folders/1kMuictsfTVKPQGt3c3QXo5uvbfQVGIF8?usp=sharing
 
 Materiais
 ------------
