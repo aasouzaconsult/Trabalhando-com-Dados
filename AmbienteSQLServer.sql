@@ -1,3 +1,12 @@
+----------------------------
+-- Importar arquivos .xls --
+----------------------------
+
+------------------------------------- 
+-- MONTAGEM DO AMBIENTE SQL SERVER --
+-------------------------------------
+
+-- Criando o banco de dados
 -- CREATE DATABASE DBCurso
 
 -- Criando as Tabelas
@@ -13,7 +22,7 @@ CREATE TABLE TbPessoa (
  , DtDemissao smalldatetime )
 -- Delete from TbPessoa
 
--- Vers„o 2016 ou superior
+-- Vers√£o 2016 ou superior
 -- ALTER TABLE TbPessoa ALTER COLUMN EMail ADD MASKED WITH(FUNCTION = 'email()')
 -- ALTER TABLE TbPessoa ALTER COLUMN Numero_Cartao ADD MASKED WITH(FUNCTION = 'partial(4, "********", 4)')
 
@@ -32,20 +41,20 @@ CREATE TABLE TbDependente (
 )
 
 -- Populando
-INSERT INTO TbPessoa VALUES ('Nome da Pessoa 1', 'M', 'Rua do teste 1', 'EusÈbio', 'e-mail_x@e-mail.com', '1254125414562366', '20150512', null)
+INSERT INTO TbPessoa VALUES ('Nome da Pessoa 1', 'M', 'Rua do teste 1', 'Eus√©bio', 'e-mail_x@e-mail.com', '1254125414562366', '20150512', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 2', 'M', 'Rua do teste 3', 'Euzebio', 'e-mail_y@e-mail.com', '1254125414562386', '20150515', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 3', 'F', 'Rua do teste 7', 'Fortaleza', 'e-mail_a@e-mail.com', '1254125414562266', '20140712', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 4', 'M', 'Rua do teste 2', 'Fortaleza', 'e-mail_v@e-mail.com', '1254125414562166', '20150612', null)
-INSERT INTO TbPessoa VALUES ('Nome da Pessoa 5', 'M', 'Rua do teste 3', 'EusÈbio', 'e-mail_c@e-mail.com', '1254125414562766', '20150810', null)
-INSERT INTO TbPessoa VALUES ('Nome da Pessoa 6', 'M', 'Rua do teste 4', 'Maracana˙', 'e-mail_d@e-mail.com', '1254125414562366', '20170419', null)
+INSERT INTO TbPessoa VALUES ('Nome da Pessoa 5', 'M', 'Rua do teste 3', 'Eus√©bio', 'e-mail_c@e-mail.com', '1254125414562766', '20150810', null)
+INSERT INTO TbPessoa VALUES ('Nome da Pessoa 6', 'M', 'Rua do teste 4', 'Maracana√∫', 'e-mail_d@e-mail.com', '1254125414562366', '20170419', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 7', 'F', 'Rua do teste 5', 'Aquiraz', 'e-mail_j@e-mail.com', '1253125414562366', '20150705', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 8', 'M', 'Rua do teste 8', 'Fortalesa', 'e-mail_l@e-mail.com', '1244125414562366', '20130211', null)
-INSERT INTO TbPessoa VALUES ('Nome da Pessoa 9', 'F', 'Rua do teste 1', 'EusÈbio', 'e-mail_m@e-mail.com', '1253125414562346', '20180512', null)
+INSERT INTO TbPessoa VALUES ('Nome da Pessoa 9', 'F', 'Rua do teste 1', 'Eus√©bio', 'e-mail_m@e-mail.com', '1253125414562346', '20180512', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 10', 'M', 'Rua do teste 03', 'Euzebio', 'e-mail_n@e-mail.com', '1254125414562366', '20150515', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 11', 'M', 'Rua do teste 17', 'Fortaleza', 'e-mail_o@e-mail.com', '1253125414562366', '20140712', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 12', 'F', 'Rua do teste 22', 'Fortaleza', 'e-mail_p@e-mail.com', '1254125414562366', '20150612', null)
-INSERT INTO TbPessoa VALUES ('Nome da Pessoa 13', 'M', 'Rua do teste 33', 'EusÈbio', 'e-mail_q@e-mail.com', '1284125414562366', '20150810', null)
-INSERT INTO TbPessoa VALUES ('Nome da Pessoa 14', 'M', 'Rua do teste 34', 'Maracana˙', 'e-mail_r@e-mail.com', '1254125414562366', '20170419', null)
+INSERT INTO TbPessoa VALUES ('Nome da Pessoa 13', 'M', 'Rua do teste 33', 'Eus√©bio', 'e-mail_q@e-mail.com', '1284125414562366', '20150810', null)
+INSERT INTO TbPessoa VALUES ('Nome da Pessoa 14', 'M', 'Rua do teste 34', 'Maracana√∫', 'e-mail_r@e-mail.com', '1254125414562366', '20170419', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 15', 'F', 'Rua do teste 25', 'Aquiraz', 'e-mail_s@e-mail.com', '1244125414562366', '20150705', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 16', 'M', 'Rua do teste 18', 'Fotaleza', 'e-mail_t@e-mail.com', '1254125414562226', '20130211', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 17', 'M', 'Rua do teste 28', 'Fortaleza', 'e-mail_u@e-mail.com', '1454125414562266', '20170211', null)
@@ -99,25 +108,25 @@ Select *
 Select * 
   From TbVendedor Ven
   Right Join TbPessoa   Pes ON Pes.CodigoPessoa = Ven.CodigoPessoa -- Retorna tudo da Tabela da Direita
-
+  
 ------------------------
 -- Qualidade de Dados --
 ------------------------
--- Erros digitaÁ„o - Muito comum
+-- Erros digita√ß√£o - Muito comum
 Select Cidade, count(*)
   From TbVendedor Ven
   Join TbPessoa   Pes ON Pes.CodigoPessoa = Ven.CodigoPessoa
  Group by Cidade
--- SoluÁ„o: Ajustes Manuais, Ajustes via Banco de Dados, Cadastro ˙nico de EndereÁos (minimiza)
+-- Solu√ß√£o: Ajustes Manuais, Ajustes via Banco de Dados, Cadastro √∫nico de Endere√ßos (minimiza)
  
--- PadronizaÁ„o de Nomenclaturas - Campo Sexo
+-- Padroniza√ß√£o de Nomenclaturas - Campo Sexo
 Select Ven.Vendedor, Pes.Sexo, Dep.Depedente, Dep.Sexo
   From TbVendedor   Ven
   Join TbPessoa     Pes ON Pes.CodigoPessoa   = Ven.CodigoPessoa
   Join TbDependente Dep ON Dep.CodigoVendedor = Ven.CodigoVendedor
  Order by Ven.CodigoVendedor
 
--- SoluÁ„o (PadronizaÁ„o de Nomenclaturas - Campo Sexo)
+-- Solu√ß√£o (Padroniza√ß√£o de Nomenclaturas - Campo Sexo)
 Select Ven.Vendedor
      , Pes.Sexo
      , Dep.Depedente
@@ -132,36 +141,11 @@ Select Ven.Vendedor
 ---------------------------
 --https://www.dirceuresende.com/blog/sql-server-mascaramento-de-dados-com-o-dynamic-data-masking-ddm/
 
--- Vamos criar um usu·rio para conseguirmos visualizar os dados mascarados
--- Lembre-se: Usu·rios com permiss„o db_owner ou sysadmin SEMPRE v„o ver os dados sem m·scara
+-- Vamos criar um usu√°rio para conseguirmos visualizar os dados mascarados
+-- Lembre-se: Usu√°rios com permiss√£o db_owner ou sysadmin SEMPRE v√£o ver os dados sem m√°scara
 IF (USER_ID('Teste_DDM') IS NULL)
     CREATE USER [Teste_DDM] WITHOUT LOGIN
     
 GRANT SELECT ON dbo.Teste_DDM TO [Teste_DDM]
 
 Select * From TbPessoa
-
----------
--- ETL --
----------
--- CREATE DATABASE ArmazemDeDados
-
--- Dependentes por Vendedor
-
---CREATE PROCEDURE [dbo].[spCarga_Dados] AS 
---BEGIN
-  
-  IF EXISTS (SELECT * FROM ArmazemDeDados.sys.objects WHERE object_id = OBJECT_ID(N'ArmazemDeDados..Visao_DependenteVendedor') AND type IN (N'U'))
-        DROP TABLE ArmazemDeDados..Visao_DependenteVendedor
-
-Select Ven.Vendedor
-     , Pes.Sexo
-     , Dep.Depedente
-     , [Sexo Dependente] = CASE WHEN Dep.Sexo = 1 THEN 'M' ELSE 'F' END
-  Into ArmazemDeDados..Visao_DependenteVendedor
-  From TbVendedor   Ven
-  Join TbPessoa     Pes ON Pes.CodigoPessoa   = Ven.CodigoPessoa
-  Join TbDependente Dep ON Dep.CodigoVendedor = Ven.CodigoVendedor
- Order by Ven.CodigoVendedor
-
---END
