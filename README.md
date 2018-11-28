@@ -5,8 +5,12 @@
 
 Softwares
 ---------
-- SQL Server 2017 - Developer (https://www.microsoft.com/pt-br/sql-server/sql-server-downloads)
+- Microsoft SQL Server (https://www.microsoft.com/pt-br/sql-server/sql-server-downloads)
 - Power BI Desktop (https://powerbi.microsoft.com/pt-br/desktop/)
+
+Apresentação
+------------
+Dados.pdf
 
 --------------------------------------------------------------------------------------------------
 1° Encontro
