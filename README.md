@@ -1,9 +1,9 @@
 # Curso: Trabalhando com Dados
 - Alex Souza
 - E-mail: aasouzaconsult@gmail.com
+- Lattes: http://lattes.cnpq.br/3318149614519892
 - Blog: https://pessoalex.wordpress.com/
 - Linkedin: https://www.linkedin.com/in/alex-souza/
-- Lattes: 
 
 Softwares
 ---------
