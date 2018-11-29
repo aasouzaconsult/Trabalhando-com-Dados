@@ -30,10 +30,12 @@ Dados, Banco de Dados, Qualidade de Dados
 Dicas
 -----
 - Banco de Dados (https://pessoalex.wordpress.com/dados/estruturados/banco-de-dados/)
-- SQL Server (Arquitetura - https://pessoalex.wordpress.com/dados/estruturados/banco-de-dados/relacionais/sql-server/arquitetura-no-sql-server/)
+- SQL Server (Backup - https://pessoalex.wordpress.com/2011/05/25/backup_restore/)
+- SQL Server (Alta Disponibilidade - https://pessoalex.wordpress.com/dados/estruturados/banco-de-dados/relacionais/sql-server/alta-disponibilidade-no-sql-server/)
 - SQL Server (Segurança - https://pessoalex.wordpress.com/dados/estruturados/banco-de-dados/relacionais/sql-server/seguranca-no-sql-server/)
-- SQL Server (Backup - )
-- Qualidade de Dados
+- SQL Server (Arquitetura - https://pessoalex.wordpress.com/dados/estruturados/banco-de-dados/relacionais/sql-server/arquitetura-no-sql-server/)
+- SQL Server (Desempenho - https://pessoalex.wordpress.com/dados/estruturados/banco-de-dados/relacionais/sql-server/desempenho/)
+- Qualidade de Dados (https://gpdiceblog.wordpress.com/2017/09/12/a-importancia-da-qualidade-dos-dados-nas-empresas-com-enfase-no-apoio-a-tomada-de-decisao-um-estudo-exploratorio/)
 
 Bases em Arquivos
 -------------
