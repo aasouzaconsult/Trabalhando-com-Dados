@@ -29,11 +29,10 @@ Dados, Banco de Dados, Qualidade de Dados
 
 Dicas
 -----
-- Banco de Dados
-- SQL Server 
--- Arquitetura
--- Segurança
--- Backup
+- Banco de Dados (https://pessoalex.wordpress.com/dados/estruturados/banco-de-dados/)
+- SQL Server (Arquitetura - https://pessoalex.wordpress.com/dados/estruturados/banco-de-dados/relacionais/sql-server/arquitetura-no-sql-server/)
+- SQL Server (Segurança - https://pessoalex.wordpress.com/dados/estruturados/banco-de-dados/relacionais/sql-server/seguranca-no-sql-server/)
+- SQL Server (Backup - )
 - Qualidade de Dados
 
 Bases em Arquivos
