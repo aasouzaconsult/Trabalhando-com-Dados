@@ -30,6 +30,10 @@ Dados, Banco de Dados, Qualidade de Dados
 Dicas
 -----
 - Banco de Dados
+- SQL Server 
+-- Arquitetura
+-- Segurança
+-- Backup
 - Qualidade de Dados
 
 Bases em Arquivos
