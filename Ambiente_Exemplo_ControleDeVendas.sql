@@ -3,9 +3,9 @@
 -------------------------
 
 -- Criar o banco de dados: DB_ControleVendas
--- create database DB_ControleVendas
+-- CREATE DATABASE Banco_Emp2_ControleVendas
 
-use DB_ControleVendas;
+USE Banco_Emp2_ControleVendas;
 
 create table TB_Cliente (
    idCli      int          identity(1,1) primary key
@@ -101,7 +101,7 @@ Select * from TB_VendaItem
 
 USE ArmazemDeDados;
 
-CREATE VIEW vwPedidoTrabalho AS
+CREATE VIEW vw_VisaoControleVendas_Empresa2 AS
 SELECT Ped.idPed
      , Ped.DataPed
      , Cli.*
@@ -112,8 +112,8 @@ SELECT Ped.idPed
      , Ite.Qtd
      , Ite.VrUnt
      , Ite.VrTot
-  FROM DB_ControleVendas..TB_Venda      Ped
-  JOIN DB_ControleVendas..TB_Cliente    Cli ON Cli.idCli = Ped.idCli
-  JOIN DB_ControleVendas..TB_Vendedor   Ven ON Ven.idVen = Ped.idVen
-  JOIN DB_ControleVendas..TB_VendaItem  Ite ON Ite.idPed = Ped.idPed
-  JOIN DB_ControleVendas..TB_Produto    Prd ON Prd.idPrd = Ite.idPrd
+  FROM Banco_Emp2_ControleVendas..TB_Venda      Ped
+  JOIN Banco_Emp2_ControleVendas..TB_Cliente    Cli ON Cli.idCli = Ped.idCli
+  JOIN Banco_Emp2_ControleVendas..TB_Vendedor   Ven ON Ven.idVen = Ped.idVen
+  JOIN Banco_Emp2_ControleVendas..TB_VendaItem  Ite ON Ite.idPed = Ped.idPed
+  JOIN Banco_Emp2_ControleVendas..TB_Produto    Prd ON Prd.idPrd = Ite.idPrd
