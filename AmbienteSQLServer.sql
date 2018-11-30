@@ -1,13 +1,45 @@
-----------------------------
--- Importar arquivos .xls --
-----------------------------
+--------------------------------
+-- LER DIRETO DO BI (PowerBI) --
+--------------------------------
+-- BI (exemplos .xml, .csv)
 
 ------------------------------------- 
 -- MONTAGEM DO AMBIENTE SQL SERVER --
 -------------------------------------
+-- Criar o Banco de Dados > BancoSistemaVendas
+CREATE DATABASE BancoSistemaVendas
+USE BancoSistemaVendas -- Setar como principal para a seÁ„o
 
--- Criando o banco de dados
--- CREATE DATABASE DBCurso
+---------------------------------------
+-- IMPORTAR ARQUIVO (.xls) PARA O BD --
+---------------------------------------
+-- BD > Tarefas > Importar Dados
+
+--> BaseDemonstracao.xlsx (TbVendas)
+--> BaseDemonstracao_Produto.xlsx (TbProdutos)
+
+Select * From TbVendas;
+Select * From TbProdutos;
+
+-- Relacionamento
+-- RelaÁ„o de Vendas
+Select Ven.[Data Venda]
+     , Ven.Cliente
+	 , Pro.Produto
+	 , Ven.Und
+	 , Ven.Quantidade
+	 , Ven.[Vr Unit·rio]
+	 , Ven.Total
+	 , Ven.Estado
+	 , Ven.Cidade
+  From BancoSistemaVendas..TbVendas Ven
+  join BancoSistemaVendas..TbProdutos Pro on Pro.Codigo = Ven.Codigo;
+
+------------------------------------- 
+-- MONTAGEM DO AMBIENTE SQL SERVER --
+-------------------------------------
+-- Usar o banco de dados criado para o BancoSistemaVendas
+USE BancoSistemaVendas;
 
 -- Criando as Tabelas
 CREATE TABLE TbPessoa (
@@ -22,7 +54,7 @@ CREATE TABLE TbPessoa (
  , DtDemissao smalldatetime )
 -- Delete from TbPessoa
 
--- Vers√£o 2016 ou superior
+-- Vers„o 2016 ou superior
 -- ALTER TABLE TbPessoa ALTER COLUMN EMail ADD MASKED WITH(FUNCTION = 'email()')
 -- ALTER TABLE TbPessoa ALTER COLUMN Numero_Cartao ADD MASKED WITH(FUNCTION = 'partial(4, "********", 4)')
 
@@ -40,21 +72,21 @@ CREATE TABLE TbDependente (
  , DtNasc smalldatetime
 )
 
--- Populando
-INSERT INTO TbPessoa VALUES ('Nome da Pessoa 1', 'M', 'Rua do teste 1', 'Eus√©bio', 'e-mail_x@e-mail.com', '1254125414562366', '20150512', null)
+-- Populando (gerando DADOS)
+INSERT INTO TbPessoa VALUES ('Nome da Pessoa 1', 'M', 'Rua do teste 1', 'EusÈbio', 'e-mail_x@e-mail.com', '1254125414562366', '20150512', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 2', 'M', 'Rua do teste 3', 'Euzebio', 'e-mail_y@e-mail.com', '1254125414562386', '20150515', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 3', 'F', 'Rua do teste 7', 'Fortaleza', 'e-mail_a@e-mail.com', '1254125414562266', '20140712', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 4', 'M', 'Rua do teste 2', 'Fortaleza', 'e-mail_v@e-mail.com', '1254125414562166', '20150612', null)
-INSERT INTO TbPessoa VALUES ('Nome da Pessoa 5', 'M', 'Rua do teste 3', 'Eus√©bio', 'e-mail_c@e-mail.com', '1254125414562766', '20150810', null)
-INSERT INTO TbPessoa VALUES ('Nome da Pessoa 6', 'M', 'Rua do teste 4', 'Maracana√∫', 'e-mail_d@e-mail.com', '1254125414562366', '20170419', null)
+INSERT INTO TbPessoa VALUES ('Nome da Pessoa 5', 'M', 'Rua do teste 3', 'EusÈbio', 'e-mail_c@e-mail.com', '1254125414562766', '20150810', null)
+INSERT INTO TbPessoa VALUES ('Nome da Pessoa 6', 'M', 'Rua do teste 4', 'Maracana˙', 'e-mail_d@e-mail.com', '1254125414562366', '20170419', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 7', 'F', 'Rua do teste 5', 'Aquiraz', 'e-mail_j@e-mail.com', '1253125414562366', '20150705', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 8', 'M', 'Rua do teste 8', 'Fortalesa', 'e-mail_l@e-mail.com', '1244125414562366', '20130211', null)
-INSERT INTO TbPessoa VALUES ('Nome da Pessoa 9', 'F', 'Rua do teste 1', 'Eus√©bio', 'e-mail_m@e-mail.com', '1253125414562346', '20180512', null)
+INSERT INTO TbPessoa VALUES ('Nome da Pessoa 9', 'F', 'Rua do teste 1', 'EusÈbio', 'e-mail_m@e-mail.com', '1253125414562346', '20180512', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 10', 'M', 'Rua do teste 03', 'Euzebio', 'e-mail_n@e-mail.com', '1254125414562366', '20150515', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 11', 'M', 'Rua do teste 17', 'Fortaleza', 'e-mail_o@e-mail.com', '1253125414562366', '20140712', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 12', 'F', 'Rua do teste 22', 'Fortaleza', 'e-mail_p@e-mail.com', '1254125414562366', '20150612', null)
-INSERT INTO TbPessoa VALUES ('Nome da Pessoa 13', 'M', 'Rua do teste 33', 'Eus√©bio', 'e-mail_q@e-mail.com', '1284125414562366', '20150810', null)
-INSERT INTO TbPessoa VALUES ('Nome da Pessoa 14', 'M', 'Rua do teste 34', 'Maracana√∫', 'e-mail_r@e-mail.com', '1254125414562366', '20170419', null)
+INSERT INTO TbPessoa VALUES ('Nome da Pessoa 13', 'M', 'Rua do teste 33', 'EusÈbio', 'e-mail_q@e-mail.com', '1284125414562366', '20150810', null)
+INSERT INTO TbPessoa VALUES ('Nome da Pessoa 14', 'M', 'Rua do teste 34', 'Maracana˙', 'e-mail_r@e-mail.com', '1254125414562366', '20170419', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 15', 'F', 'Rua do teste 25', 'Aquiraz', 'e-mail_s@e-mail.com', '1244125414562366', '20150705', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 16', 'M', 'Rua do teste 18', 'Fotaleza', 'e-mail_t@e-mail.com', '1254125414562226', '20130211', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 17', 'M', 'Rua do teste 28', 'Fortaleza', 'e-mail_u@e-mail.com', '1454125414562266', '20170211', null)
@@ -94,9 +126,9 @@ INSERT INTO TbDependente VALUES (1,  'Dependente AA', 1, '20181005')
 INSERT INTO TbDependente VALUES (13,  'Dependente GG', 1, '20171005')
 Select * From TbDependente
 
----------------------
--- Relacionamentos --
----------------------
+-------------------------------------------
+-- Relacionamentos (gerando INFORMA«’ES) --
+-------------------------------------------
 Select * 
   From TbVendedor Ven
   Join TbPessoa   Pes ON Pes.CodigoPessoa = Ven.CodigoPessoa
@@ -108,25 +140,72 @@ Select *
 Select * 
   From TbVendedor Ven
   Right Join TbPessoa   Pes ON Pes.CodigoPessoa = Ven.CodigoPessoa -- Retorna tudo da Tabela da Direita
+
+-- InformaÁıes de Vendas por Vendedor - Detalhe
+Select Ven.[Data Venda]
+     , Ven.Cliente
+	 , Pro.Produto
+	 , Ven.Und
+	 , Ven.Quantidade
+	 , Ven.[Vr Unit·rio]
+	 , Ven.Total
+	 , Ven.Estado
+	 , Ven.Cidade
+	 , Vdd.Vendedor
+  From BancoSistemaVendas..TbVendas   Ven
+  join BancoSistemaVendas..TbProdutos Pro on Pro.Codigo = Ven.Codigo
+  left join BancoSistemaVendas..TbVendedor Vdd on Vdd.CodigoVendedor = Ven.CodigoVendedor -- 2 Vendas sem vendedor
+  Order by Vdd.Vendedor
+-- RelaÁ„o de Dependentes por Vendedor
   
+-------------------------------------------------------------
+-- Business Intelligence (gerando CONHECIMENTO, SABEDORIA) --
+------------------------------------------------------------- 
+-- Criando o banco de dados para o BI
+CREATE DATABASE ArmazemDeDados
+USE ArmazemDeDados;
+
+-- Colando essa consulta para o Armazem de Dados (gerando diversas - INFORMA«’ES)
+-- Gerando nossa base de Vendas
+Select Ven.Cod 
+     , Ven.[Data Venda]
+     , Ven.Cliente
+	 , Pro.Produto
+	 , Ven.Und
+	 , Ven.Quantidade
+	 , Ven.[Vr Unit·rio]
+	 , Ven.Total
+	 , Ven.Estado
+	 , Ven.Cidade
+	 , Vdd.Vendedor
+	 , Vdd.VrBonus as TaxaComissao
+	 , Comissao = (Ven.Total*Vdd.VrBonus)/100
+  INTO ArmazemDeDados..Visao_Vendas
+  From BancoSistemaVendas..TbVendas        Ven
+  join BancoSistemaVendas..TbProdutos      Pro on Pro.Codigo         = Ven.Codigo
+  left join BancoSistemaVendas..TbVendedor Vdd on Vdd.CodigoVendedor = Ven.CodigoVendedor -- 2 Vendas sem vendedor
+
+-- ABRIR NO POWERBI
+--> ExemploPowerBI_ConhecimentoESabedoria.pbix
+
 ------------------------
 -- Qualidade de Dados --
 ------------------------
--- Erros digita√ß√£o - Muito comum
+-- Erros digitaÁ„o - Muito comum
 Select Cidade, count(*)
   From TbVendedor Ven
   Join TbPessoa   Pes ON Pes.CodigoPessoa = Ven.CodigoPessoa
  Group by Cidade
--- Solu√ß√£o: Ajustes Manuais, Ajustes via Banco de Dados, Cadastro √∫nico de Endere√ßos (minimiza)
+-- SoluÁ„o: Ajustes Manuais, Ajustes via Banco de Dados, Cadastro ˙nico de EndereÁos (minimiza)
  
--- Padroniza√ß√£o de Nomenclaturas - Campo Sexo
+-- PadronizaÁ„o de Nomenclaturas - Campo Sexo
 Select Ven.Vendedor, Pes.Sexo, Dep.Depedente, Dep.Sexo
   From TbVendedor   Ven
   Join TbPessoa     Pes ON Pes.CodigoPessoa   = Ven.CodigoPessoa
   Join TbDependente Dep ON Dep.CodigoVendedor = Ven.CodigoVendedor
  Order by Ven.CodigoVendedor
 
--- Solu√ß√£o (Padroniza√ß√£o de Nomenclaturas - Campo Sexo)
+-- SoluÁ„o (PadronizaÁ„o de Nomenclaturas - Campo Sexo)
 Select Ven.Vendedor
      , Pes.Sexo
      , Dep.Depedente
@@ -141,11 +220,19 @@ Select Ven.Vendedor
 ---------------------------
 --https://www.dirceuresende.com/blog/sql-server-mascaramento-de-dados-com-o-dynamic-data-masking-ddm/
 
--- Vamos criar um usu√°rio para conseguirmos visualizar os dados mascarados
--- Lembre-se: Usu√°rios com permiss√£o db_owner ou sysadmin SEMPRE v√£o ver os dados sem m√°scara
+-- Vamos criar um usu·rio para conseguirmos visualizar os dados mascarados
+-- Lembre-se: Usu·rios com permiss„o db_owner ou sysadmin SEMPRE v„o ver os dados sem m·scara
 IF (USER_ID('Teste_DDM') IS NULL)
     CREATE USER [Teste_DDM] WITHOUT LOGIN
     
-GRANT SELECT ON dbo.Teste_DDM TO [Teste_DDM]
+GRANT SELECT ON dbo.TbPessoa TO [Teste_DDM]
 
-Select * From TbPessoa
+Select * From TbPessoa;
+
+-- Visualizando os dados mascarados (Como se fosse o usu·rio Teste_DDM, que acabamos de criar)
+EXECUTE AS USER = 'Teste_DDM'
+GO
+SELECT * FROM TbPessoa
+GO
+REVERT -- Reverte as permissıes para o seu usu·rio
+GO
