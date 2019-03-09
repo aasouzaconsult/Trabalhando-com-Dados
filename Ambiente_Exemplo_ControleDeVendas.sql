@@ -3,7 +3,7 @@
 -------------------------
 
 -- Criar o banco de dados: DB_ControleVendas
--- CREATE DATABASE Banco_Emp2_ControleVendas
+CREATE DATABASE Banco_Emp2_ControleVendas
 
 USE Banco_Emp2_ControleVendas;
 
@@ -96,8 +96,8 @@ Select * from TB_VendaItem
 ------------------------------------
 -- Banco de Dados: ArmazemDeDados --
 ------------------------------------
--- Criar o banco de dados
--- CREATE DATABASE ArmazemDeDados;
+-- Criar o banco de dados (Data Lake)
+CREATE DATABASE ArmazemDeDados;
 
 USE ArmazemDeDados;
 
