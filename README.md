@@ -63,4 +63,6 @@ Scripts (.sql)
 Arquivos PowerBI (.pbix)
 -------------
 - ExemploPowerBI.pbix
+- Exemplo_Relacionamento.pbix
 - ExemploPowerBI_Dispersao_ENEM2014.pbix
+- ExemploPowerBI_ConhecimentoESabedoria.pbix
