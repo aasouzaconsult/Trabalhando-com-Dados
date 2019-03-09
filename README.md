@@ -46,7 +46,7 @@ Scripts (.sql)
 -------------
 - AmbienteSQLServer.sql
 
-Praticando...
+Praticando em casa...
 -------------
 Usando o SQL Server ou qualquer outro SGBD, criar um banco de dados para Controle de Vendas, algumas das condições:
 - Cada Venda tem que ter um Vendedor associado
