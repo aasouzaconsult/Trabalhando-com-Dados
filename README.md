@@ -59,8 +59,7 @@ Criar um banco de dados para Controle de Vendas, algumas condições:
 
 * Sugestão: alimentar com dados desde Janeiro de 2016, com clientes em diversos Bairros, Cidades e Estado. Usem a criatividade, exemplos e experiência!
 
-Ainda praticando... Gráficos (no Power BI ou qualquer outra ferramenta)
------------------------------------------------------------------------
+Gráficos (no Power BI ou qualquer outra ferramenta)
 - Usem a criatividades
 - Alguns exemplos: Total de Vendas por Ano, por Mês, por Estado (Mapa), Gráfico de Vendas e etc
 
