@@ -1,6 +1,6 @@
 # Curso: Ciência de Dados com aplicação em Inteligência de Negócio e em Dados Textuais
 - Alex Souza
-- E-mail: aasouzaconsult@gmail.com
+- E-mail: aasouzaconsult@gmail.com (dúvidas, pode me enviar!)
 - Lattes: http://lattes.cnpq.br/3318149614519892
 - Blog: https://pessoalex.wordpress.com/
 - Linkedin: https://www.linkedin.com/in/alex-souza/
