@@ -46,6 +46,24 @@ Scripts (.sql)
 -------------
 - AmbienteSQLServer.sql
 
+Praticando...
+-------------
+Usando o SQL Server ou qualquer outro banco de dados...
+Criar um banco de dados para Controle de Vendas, algumas condições:
+- Cada Venda tem que ter um Vendedor associado
+- Cada Venda deve estar associada a um Cliente
+- Cada Cliente terá um Nome, CPF, Telefone, Endereço completo (sugestão: Logradouro, CEP, Bairro, Cidade, Estado. Em campos separados)
+- Cada Venda pode ter mais de um Produto (Item de Venda)
+- Cada Produto deve ter um código, Descrição
+- Para cada Item de Venda deve ser informado, o código e descrição do produto, quantidade vendida, o valor unitário e o Valor total
+
+* Sugestão: alimentar com dados desde Janeiro de 2016, com clientes em diversos Bairros, Cidades e Estado. Usem a criatividade, exemplos e experiência!
+
+Ainda praticando... Gráficos (no Power BI ou qualquer outra ferramenta)
+-----------------------------------------------------------------------
+- Usem a criatividades
+- Alguns exemplos: Total de Vendas por Ano, por Mês, por Estado (Mapa), Gráfico de Vendas e etc
+
 --------------------------------------------------------------------------------------------------
 2° Dia
 -----------
