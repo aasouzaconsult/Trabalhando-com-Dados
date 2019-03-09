@@ -1,4 +1,4 @@
-# Curso: Trabalhando com Dados
+# Curso: Ciência de Dados com aplicação em Inteligência de Negócio e em Dados Textuais
 - Alex Souza
 - E-mail: aasouzaconsult@gmail.com
 - Lattes: http://lattes.cnpq.br/3318149614519892
@@ -7,7 +7,7 @@
 
 Softwares
 ---------
-- Microsoft SQL Server (https://www.microsoft.com/pt-br/sql-server/sql-server-downloads)
+- Microsoft SQL Server 2016 (https://www.microsoft.com/pt-br/sql-server/sql-server-downloads)
 - Power BI Desktop (https://powerbi.microsoft.com/pt-br/desktop/)
 
 Apresentação
@@ -48,8 +48,7 @@ Scripts (.sql)
 
 Praticando...
 -------------
-Usando o SQL Server ou qualquer outro banco de dados...
-Criar um banco de dados para Controle de Vendas, algumas condições:
+Usando o SQL Server ou qualquer outro SGBD, criar um banco de dados para Controle de Vendas, algumas das condições:
 - Cada Venda tem que ter um Vendedor associado
 - Cada Venda deve estar associada a um Cliente
 - Cada Cliente terá um Nome, CPF, Telefone, Endereço completo (sugestão: Logradouro, CEP, Bairro, Cidade, Estado. Em campos separados)
@@ -57,9 +56,9 @@ Criar um banco de dados para Controle de Vendas, algumas condições:
 - Cada Produto deve ter um código, Descrição
 - Para cada Item de Venda deve ser informado, o código e descrição do produto, quantidade vendida, o valor unitário e o Valor total
 
-* Sugestão: alimentar com dados desde Janeiro de 2016, com clientes em diversos Bairros, Cidades e Estado. Usem a criatividade, exemplos e experiência!
+* Sugestão: alimentar com dados desde Janeiro de 2016, com clientes em diversos Bairros, Cidades e Estado. Usem a criatividade, exemplos (Ambiente_Exemplo_ControleDeVendas.sql e AmbienteSQLServer.sql) e experiência!
 
-Gráficos (no Power BI ou qualquer outra ferramenta)
+Gráficos (no Power BI ou qualquer outra ferramenta de Self-Service BI)
 - Usem a criatividades
 - Alguns exemplos: Total de Vendas por Ano, por Mês, por Estado (Mapa), Gráfico de Vendas e etc
 
@@ -76,6 +75,7 @@ Dicas
 Scripts (.sql)
 -------------
 - AmbienteBI.sql
+- Ambiente_Exemplo_ControleDeVendas.sql
 
 Arquivos PowerBI (.pbix)
 -------------
