@@ -4,6 +4,12 @@
 --https://www.dirceuresende.com/blog/sql-server-mascaramento-de-dados-com-o-dynamic-data-masking-ddm/
 
 USE BancoSistemaVendas -- Setar como principal para a seção
+
+-- Lembram...
+-- Versão 2016 ou superior (Mascaramento de Dados)
+-- ALTER TABLE TbPessoa ALTER COLUMN EMail ADD MASKED WITH(FUNCTION = 'email()')
+-- ALTER TABLE TbPessoa ALTER COLUMN Numero_Cartao ADD MASKED WITH(FUNCTION = 'partial(4, "********", 4)')
+
 -- Vamos criar um usuário para conseguirmos visualizar os dados mascarados
 -- Lembre-se: Usuários com permissão db_owner ou sysadmin SEMPRE vão ver os dados sem máscara
 IF (USER_ID('Teste_DDM') IS NULL)

@@ -20,14 +20,15 @@ Select * From TbProdutos;
 -- Relação de Vendas
 Select Ven.[Data Venda]
      , Ven.Cliente
-	 , Pro.Produto
+	 , Pro.Produto --Adicionado a descrição
+	 , Pro.Tipo    --Adicionado o Tipo
 	 , Ven.Und
 	 , Ven.Quantidade
 	 , Ven.[Vr Unitário]
 	 , Ven.Total
 	 , Ven.Estado
 	 , Ven.Cidade
-  From BancoSistemaVendas..TbVendas Ven
+  From BancoSistemaVendas..TbVendas   Ven
   join BancoSistemaVendas..TbProdutos Pro on Pro.Codigo = Ven.Codigo;
 
 ------------------------------------- 
@@ -37,37 +38,49 @@ Select Ven.[Data Venda]
 USE BancoSistemaVendas;
 
 -- Criando as Tabelas
+-- CREATE (https://docs.microsoft.com/pt-br/sql/t-sql/statements/create-table-transact-sql?view=sql-server-2017)
+
+-- Criando tabela de Pessoa
 CREATE TABLE TbPessoa (
    CodigoPessoa int identity(1,1) primary key
  , Pessoa varchar(200)
- , Sexo   char(1)
+ , Sexo   char(1) CHECK (Sexo IN ('M', 'F'))
  , Endereco varchar(200)
  , Cidade varchar (100)
  , EMail varchar(90)
  , Numero_Cartao VARCHAR(16) 
  , DtAdmissao smalldatetime
  , DtDemissao smalldatetime )
--- Delete from TbPessoa
+-- Delete from TbPessoa -- Limpa todos os dados da Tabela
+-- Drop Table TbPessoa -- Apaga a tabela
 
--- Versão 2016 ou superior
+-- Versão 2016 ou superior (Mascaramento de Dados)
 -- ALTER TABLE TbPessoa ALTER COLUMN EMail ADD MASKED WITH(FUNCTION = 'email()')
 -- ALTER TABLE TbPessoa ALTER COLUMN Numero_Cartao ADD MASKED WITH(FUNCTION = 'partial(4, "********", 4)')
 
+-- Criando tabela de Vendedor
 CREATE TABLE TbVendedor (
    CodigoVendedor int identity(1,1) primary key
  , Vendedor varchar(50)
  , VrBonus decimal(19,2) 
- , CodigoPessoa int )
+ , CodigoPessoa int 
+ foreign key (CodigoPessoa) references TbPessoa(CodigoPessoa)) -- Integridade Relacional
+-- Drop Table TbVendedor -- Apaga a tabela
 
+-- Criando tabela de Dependente
 CREATE TABLE TbDependente (
    CodigoDependente int identity(1,1) primary key
  , CodigoVendedor int
  , Depedente varchar(200)
  , Sexo smallint
  , DtNasc smalldatetime
-)
+ foreign key (CodigoVendedor) references TbVendedor(CodigoVendedor)) -- Integridade Relacional
+-- Drop Table TbDependente -- Apaga a tabela
 
 -- Populando (gerando DADOS)
+-- INSERT (https://docs.microsoft.com/pt-br/sql/t-sql/statements/insert-transact-sql?view=sql-server-2017)
+
+-- Tabela Pessoa
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 1', 'M', 'Rua do teste 1', 'Eusébio', 'e-mail_x@e-mail.com', '1254125414562366', '20150512', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 2', 'M', 'Rua do teste 3', 'Euzebio', 'e-mail_y@e-mail.com', '1254125414562386', '20150515', null)
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 3', 'F', 'Rua do teste 7', 'Fortaleza', 'e-mail_a@e-mail.com', '1254125414562266', '20140712', null)
@@ -89,6 +102,7 @@ INSERT INTO TbPessoa VALUES ('Nome da Pessoa 18', 'F', 'Rua do teste 38', 'Forta
 INSERT INTO TbPessoa VALUES ('Nome da Pessoa 19', 'M', 'Rua do teste 48', 'Fortaleza', 'e-mail_z@e-mail.com', '1294125414562266', '20160211', null)
 Select * From TbPessoa
 
+-- Tabela Vendedor
 INSERT INTO TbVendedor VALUES ('Vendedor 1', 10.00, 1)
 INSERT INTO TbVendedor VALUES ('Vendedor 2', 12.00, 2)
 INSERT INTO TbVendedor VALUES ('Vendedor 3', 13.00, 3)
@@ -106,10 +120,11 @@ INSERT INTO TbVendedor VALUES ('Vendedor 14', 10.00, 14)
 INSERT INTO TbVendedor VALUES ('Vendedor 15', 17.00, 15)
 INSERT INTO TbVendedor VALUES ('Vendedor 16', 11.00, 16)
 INSERT INTO TbVendedor VALUES ('Vendedor 17', 18.00, 17)
-INSERT INTO TbVendedor VALUES ('Vendedor 18', 18.00, 100)
-INSERT INTO TbVendedor VALUES ('Vendedor 19', 18.00, 200) -- Solucionar - Integridade Relacional - Foreign Key
+INSERT INTO TbVendedor VALUES ('Vendedor 18', 18.00, 100) -- Erro de Integridade Relacional - Foreign Key
+INSERT INTO TbVendedor VALUES ('Vendedor 19', 18.00, 200) -- Erro de Integridade Relacional - Foreign Key
 Select * From TbVendedor
 
+-- Tabela Dependente
 INSERT INTO TbDependente VALUES (1, 'Dependente A', 1, '20150101')
 INSERT INTO TbDependente VALUES (3, 'Dependente B', 1, '20160601')
 INSERT INTO TbDependente VALUES (5, 'Dependente C', 2, '20170101')
@@ -129,11 +144,11 @@ Select *
   Join TbPessoa   Pes ON Pes.CodigoPessoa = Ven.CodigoPessoa
 
 Select * 
-  From TbVendedor Ven
+  From      TbVendedor Ven
   Left Join TbPessoa   Pes ON Pes.CodigoPessoa = Ven.CodigoPessoa -- Retorna tudo da Tabela da Esquerda
 
 Select * 
-  From TbVendedor Ven
+  From       TbVendedor Ven
   Right Join TbPessoa   Pes ON Pes.CodigoPessoa = Ven.CodigoPessoa -- Retorna tudo da Tabela da Direita
 
 -- Informações de Vendas por Vendedor - Detalhe
@@ -147,9 +162,9 @@ Select Ven.[Data Venda]
 	 , Ven.Estado
 	 , Ven.Cidade
 	 , Vdd.Vendedor
-  From BancoSistemaVendas..TbVendas   Ven
-  join BancoSistemaVendas..TbProdutos Pro on Pro.Codigo = Ven.Codigo
-  left join BancoSistemaVendas..TbVendedor Vdd on Vdd.CodigoVendedor = Ven.CodigoVendedor -- 2 Vendas sem vendedor
+  From BancoSistemaVendas..TbVendas        Ven
+  join BancoSistemaVendas..TbProdutos      Pro on Pro.Codigo         = Ven.Codigo
+  left join BancoSistemaVendas..TbVendedor Vdd on Vdd.CodigoVendedor = Ven.CodigoVendedor -- 1 Venda sem vendedor
   Order by Vdd.Vendedor
 -- Relação de Dependentes por Vendedor
 
@@ -164,7 +179,15 @@ Select Cidade, count(*)
   Join TbPessoa   Pes ON Pes.CodigoPessoa = Ven.CodigoPessoa
  Group by Cidade
 -- Solução: Ajustes Manuais, Ajustes via Banco de Dados, Cadastro único de Endereços (minimiza)
- 
+
+-- Exemplo
+Select Cidade
+     , CidadeOK = CASE WHEN Cidade = 'Euzebio' THEN 'Eusébio'
+                       WHEN Cidade in ('Fortalesa', 'Fotaleza') THEN 'Fortaleza'
+                  ELSE Cidade END
+ From TbPessoa Order by Cidade
+
+------------------------------------------------------------------------------------------------ 
 -- Padronização de Nomenclaturas - Campo Sexo
 Select Ven.Vendedor, Pes.Sexo, Dep.Depedente, Dep.Sexo
   From TbVendedor   Ven
@@ -181,3 +204,54 @@ Select Ven.Vendedor
   Join TbPessoa     Pes ON Pes.CodigoPessoa   = Ven.CodigoPessoa
   Join TbDependente Dep ON Dep.CodigoVendedor = Ven.CodigoVendedor
  Order by Ven.CodigoVendedor
+ 
+
+ --------------------
+-- Dicas / Dúvidas --
+---------------------
+
+-- Criando tabela de Teste
+CREATE TABLE TbTeste (
+   CodigoPessoa int identity(1,1) primary key
+ , Pessoa varchar(200)
+ , Sexo   char(1) CHECK (Sexo IN ('M', 'F'))
+ , DtAdmissao smalldatetime)
+
+-- Populando
+INSERT INTO TbTeste VALUES ('Nome da Pessoa 1' , 'M', '20150512')
+INSERT INTO TbTeste VALUES ('Nome da Pessoa 2' , 'M', '20150515')
+INSERT INTO TbTeste VALUES ('Nome da Pessoa 3' , 'F', '20140712')
+INSERT INTO TbTeste VALUES ('Nome da Pessoa 4' , 'M', '20150612')
+INSERT INTO TbTeste VALUES ('Nome da Pessoa 5' , 'M', '20150810')
+INSERT INTO TbTeste VALUES ('Nome da Pessoa 6' , 'M', '20170419')
+INSERT INTO TbTeste VALUES ('Nome da Pessoa 7' , 'F', '20150705')
+INSERT INTO TbTeste VALUES ('Nome da Pessoa 8' , 'M', '20130211')
+INSERT INTO TbTeste VALUES ('Nome da Pessoa 9' , 'F', '20180512')
+INSERT INTO TbTeste VALUES ('Nome da Pessoa 10', 'M', '20150515')
+INSERT INTO TbTeste VALUES ('Nome da Pessoa 11', 'M', '20140712')
+INSERT INTO TbTeste VALUES ('Nome da Pessoa 12', 'F', '20150612')
+INSERT INTO TbTeste VALUES ('Nome da Pessoa 13', 'M', '20150810')
+INSERT INTO TbTeste VALUES ('Nome da Pessoa 14', 'M', '20170419')
+INSERT INTO TbTeste VALUES ('Nome da Pessoa 15', 'F', '20150705')
+INSERT INTO TbTeste VALUES ('Nome da Pessoa 16', 'M', '20130211')
+INSERT INTO TbTeste VALUES ('Nome da Pessoa 17', 'M', '20170211')
+INSERT INTO TbTeste VALUES ('Nome da Pessoa 18', 'F', '20160211')
+INSERT INTO TbTeste VALUES ('Nome da Pessoa 19', 'M', '20160211')
+
+-- INSERT
+INSERT INTO TbTeste VALUES ('Teste', 'F', '20190311')
+
+INSERT INTO TbTeste VALUES ('Teste', 'H', '20190311')
+
+INSERT INTO TbTeste VALUES ('Teste', 'M', '20191311')
+
+-- SELECT
+-- WHERE
+-- MAIOR e MENOR QUE
+-- DELETE
+-- UPDATE
+
+---------------------------------------
+-- Um pouco do que veremos amanhã... --
+---------------------------------------
+-- PowerBI
