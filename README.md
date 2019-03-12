@@ -8,6 +8,8 @@
 Softwares
 ---------
 - Microsoft SQL Server 2016 (https://www.microsoft.com/pt-br/sql-server/sql-server-downloads)
+-- Instalação: https://www.dirceuresende.com/blog/como-instalar-e-configurar-o-microsoft-sql-server-2016-no-windows-server-2016/
+
 - Power BI Desktop (https://powerbi.microsoft.com/pt-br/desktop/)
 
 Apresentação
