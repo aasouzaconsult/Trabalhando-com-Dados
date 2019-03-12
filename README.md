@@ -29,7 +29,8 @@ Dados, Banco de Dados, Qualidade de Dados
 
 Dicas
 -----
-- Download SQL Server 2017: https://go.microsoft.com/fwlink/?linkid=853016
+- Download SQL Server 2017: https://go.microsoft.com/fwlink/?linkid=853016 (mecanismo)
+- Download SQL Server Management Studio: https://go.microsoft.com/fwlink/?linkid=2043154 (gerenciador)
 - Instalação SQL Server 2017: https://www.tiagoneves.net/blog/instalando-o-sql-server-2017/ (Windows / Linux)
 
 - Banco de Dados (https://pessoalex.wordpress.com/dados/estruturados/banco-de-dados/)
