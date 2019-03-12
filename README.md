@@ -8,8 +8,6 @@
 Softwares
 ---------
 - Microsoft SQL Server 2016 (https://www.microsoft.com/pt-br/sql-server/sql-server-downloads)
--- Instalação: https://www.dirceuresende.com/blog/como-instalar-e-configurar-o-microsoft-sql-server-2016-no-windows-server-2016/
-
 - Power BI Desktop (https://powerbi.microsoft.com/pt-br/desktop/)
 
 Apresentação
@@ -32,6 +30,7 @@ Dados, Banco de Dados, Qualidade de Dados
 Dicas
 -----
 - Banco de Dados (https://pessoalex.wordpress.com/dados/estruturados/banco-de-dados/)
+- Instalação SQL Server: https://www.dirceuresende.com/blog/como-instalar-e-configurar-o-microsoft-sql-server-2016-no-windows-server-2016/
 - SQL Server (Backup - https://pessoalex.wordpress.com/2011/05/25/backup_restore/)
 - SQL Server (Alta Disponibilidade - https://pessoalex.wordpress.com/dados/estruturados/banco-de-dados/relacionais/sql-server/alta-disponibilidade-no-sql-server/)
 - SQL Server (Segurança - https://pessoalex.wordpress.com/dados/estruturados/banco-de-dados/relacionais/sql-server/seguranca-no-sql-server/)
