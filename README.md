@@ -87,3 +87,4 @@ Arquivos PowerBI (.pbix)
 - Exemplo_Relacionamento.pbix
 - ExemploPowerBI_Dispersao_ENEM2014.pbix
 - ExemploPowerBI_ConhecimentoESabedoria.pbix
+- Exemplos online (https://docs.microsoft.com/pt-br/power-bi/sample-datasets)*
