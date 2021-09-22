@@ -1,6 +1,5 @@
 # Curso: Ciência de Dados com aplicação em Inteligência de Negócio e em Dados Textuais
 - Alex Souza
-- Lattes: http://lattes.cnpq.br/3318149614519892
 - Blog: https://blogdozouza.wordpress.com/
 - Linkedin: https://www.linkedin.com/in/alex-souza/
 
