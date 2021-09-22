@@ -1,7 +1,7 @@
 # Curso: Ciência de Dados com aplicação em Inteligência de Negócio e em Dados Textuais
 - Alex Souza
 - Lattes: http://lattes.cnpq.br/3318149614519892
-- Blog: https://pessoalex.wordpress.com/
+- Blog: https://blogdozouza.wordpress.com/
 - Linkedin: https://www.linkedin.com/in/alex-souza/
 
 Softwares
@@ -32,12 +32,12 @@ Dicas
 - Download SQL Server Management Studio: https://go.microsoft.com/fwlink/?linkid=2043154 (Gerenciador)
 - Instalação SQL Server 2017: https://www.tiagoneves.net/blog/instalando-o-sql-server-2017/ (Windows / Linux)
 
-- Banco de Dados (https://pessoalex.wordpress.com/dados/estruturados/banco-de-dados/)
-- SQL Server (Backup - https://pessoalex.wordpress.com/2011/05/25/backup_restore/)
-- SQL Server (Alta Disponibilidade - https://pessoalex.wordpress.com/dados/estruturados/banco-de-dados/relacionais/sql-server/alta-disponibilidade-no-sql-server/)
-- SQL Server (Segurança - https://pessoalex.wordpress.com/dados/estruturados/banco-de-dados/relacionais/sql-server/seguranca-no-sql-server/)
-- SQL Server (Arquitetura - https://pessoalex.wordpress.com/dados/estruturados/banco-de-dados/relacionais/sql-server/arquitetura-no-sql-server/)
-- SQL Server (Desempenho - https://pessoalex.wordpress.com/dados/estruturados/banco-de-dados/relacionais/sql-server/desempenho/)
+- Banco de Dados (https://blogdozouza.wordpress.com/dados/estruturados/banco-de-dados/)
+- SQL Server (Backup - https://blogdozouza.wordpress.com/2011/05/25/backup_restore/)
+- SQL Server (Alta Disponibilidade - https://blogdozouza.wordpress.com/dados/estruturados/banco-de-dados/relacionais/sql-server/alta-disponibilidade-no-sql-server/)
+- SQL Server (Segurança - https://blogdozouza.wordpress.com/dados/estruturados/banco-de-dados/relacionais/sql-server/seguranca-no-sql-server/)
+- SQL Server (Arquitetura - https://blogdozouza.wordpress.com/dados/estruturados/banco-de-dados/relacionais/sql-server/arquitetura-no-sql-server/)
+- SQL Server (Desempenho - https://blogdozouza.wordpress.com/dados/estruturados/banco-de-dados/relacionais/sql-server/desempenho/)
 - Qualidade de Dados (https://gpdiceblog.wordpress.com/2017/09/12/a-importancia-da-qualidade-dos-dados-nas-empresas-com-enfase-no-apoio-a-tomada-de-decisao-um-estudo-exploratorio/)
 
 Bases em Arquivos
@@ -72,8 +72,8 @@ ETL, Business Intelligence
 
 Dicas
 -----
-- PowerBI (https://pessoalex.wordpress.com/bi-3/microsoft/power-bi/)
-- Tableau (https://pessoalex.wordpress.com/bi-3/tableau/)
+- PowerBI (https://blogdozouza.wordpress.com/bi-3/microsoft/power-bi/)
+- Tableau (https://blogdozouza.wordpress.com/bi-3/tableau/)
 
 Scripts (.sql)
 -------------
